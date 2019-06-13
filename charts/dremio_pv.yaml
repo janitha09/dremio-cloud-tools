@@ -1,0 +1,231 @@
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  creationTimestamp: "2019-06-12T21:15:27Z"
+#  finalizers:
+#  - kubernetes.io/pvc-protection
+#  labels:
+#    app: zk
+#  name: datadir-zk-0
+#  namespace: insight
+#  resourceVersion: "550198"
+#  selfLink: /api/v1/namespaces/insight/persistentvolumeclaims/datadir-zk-0
+#  uid: 3391f9f9-8d57-11e9-bebe-0235069b540c
+#spec:
+#  accessModes:
+#  - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 10Gi
+#  storageClassName: local-storage
+#  volumeMode: Filesystem
+#status:
+#  phase: Pending
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: zk
+    type: local
+  name: datadir-zk-0
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: datadir-zk-0
+    namespace: insight
+  hostPath:
+    path: /home/ubuntu/dremio-data/zk/0
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: zk
+    type: local
+  name: datadir-zk-1
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: datadir-zk-1
+    namespace: insight
+  hostPath:
+    path: /home/ubuntu/dremio-data/zk/1
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: zk
+    type: local
+  name: datadir-zk-2
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: datadir-zk-2
+    namespace: insight
+  hostPath:
+    path: /home/ubuntu/dremio-data/zk/2
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
+#kind: PersistentVolumeClaim
+#metadata:
+#  creationTimestamp: "2019-06-12T21:15:26Z"
+#  finalizers:
+#  - kubernetes.io/pvc-protection
+#  labels:
+#    app: dremio-executor
+#  name: dremio-executor-volume-dremio-executor-0
+#  namespace: insight
+#  resourceVersion: "550153"
+#  selfLink: /api/v1/namespaces/insight/persistentvolumeclaims/dremio-executor-volume-dremio-executor-0
+#  uid: 32df85ca-8d57-11e9-bebe-0235069b540c
+#spec:
+#  accessModes:
+#  - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 10Gi
+#  storageClassName: local-storage
+#  volumeMode: Filesystem
+#status:
+#  phase: Pending
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: dremio-executor
+    type: local
+  name: dremio-executor-volume-dremio-executor-0
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: dremio-executor-volume-dremio-executor-0
+    namespace: insight
+  hostPath:
+    path: /home/ubuntu/dremio-data/executor/0
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: dremio-executor
+    type: local
+  name: dremio-executor-volume-dremio-executor-1
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: dremio-executor-volume-dremio-executor-1
+    namespace: insight
+  hostPath:
+    path: /home/ubuntu/dremio-data/executor/1
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: dremio-executor
+    type: local
+  name: dremio-executor-volume-dremio-executor-2
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: dremio-executor-volume-dremio-executor-2
+    namespace: insight
+  hostPath:
+    path: /home/ubuntu/dremio-data/executor/2
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
+#ubuntu@ip-172-31-23-63:~/Documents/dremio-cloud-tools/charts$ kubectl get pvc dremio-master-volume-dremio-master-0 -o yaml
+#---
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  creationTimestamp: "2019-06-12T21:15:27Z"
+#  finalizers:
+#  - kubernetes.io/pvc-protection
+#  labels:
+#    app: dremio-coordinator
+#  name: dremio-master-volume-dremio-master-0
+#  namespace: insight
+#  resourceVersion: "550181"
+#  selfLink: /api/v1/namespaces/insight/persistentvolumeclaims/dremio-master-volume-dremio-master-0
+#  uid: 33216a52-8d57-11e9-bebe-0235069b540c
+#spec:
+#  accessModes:
+#  - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 10Gi
+#  storageClassName: local-storage
+#  volumeMode: Filesystem
+#status:
+#  phase: Pending
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: dremio-coordinator
+    type: local
+  name: dremio-master-volume-dremio-master-0
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 10Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: dremio-master-volume-dremio-master-0
+    namespace: insight
+  hostPath:
+    path: /home/ubuntu/dremio-data/master/0
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  volumeMode: Filesystem
