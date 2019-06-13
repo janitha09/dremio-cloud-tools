@@ -130,8 +130,8 @@ spec:
         - name: datadir
           mountPath: /var/lib/zookeeper
       securityContext:
-        runAsUser: 1000
-        fsGroup: 1000
+              # runAsUser: 1000
+        # fsGroup: 1000
   volumeClaimTemplates:
   - metadata:
       name: datadir

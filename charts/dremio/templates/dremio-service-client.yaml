@@ -18,10 +18,10 @@ spec:
   ports:
   - port: {{ .Values.coordinator.client.port | default 31010 }}
     targetPort: 31010
-    name: client
+    name: tcp-client
   - port: {{ .Values.coordinator.web.port | default 9047 }}
     targetPort: 9047
-    name: web
+    name: tcp-web
   selector:
     app: dremio-coordinator
   type: {{ .Values.serviceType | default "NodePort" }}

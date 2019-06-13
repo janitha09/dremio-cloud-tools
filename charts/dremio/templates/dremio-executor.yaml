@@ -56,7 +56,10 @@ spec:
         - "start-fg"
         ports:
         - containerPort: 45678
-          name: server
+          name: tcp-server
+        readinessProbe:
+          tcpSocket:
+            port: tcp-server
       initContainers:
       - name: wait-for-zk
         image: busybox

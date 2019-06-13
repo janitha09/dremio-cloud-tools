@@ -65,14 +65,14 @@ spec:
         - "start-fg"
         ports:
         - containerPort: 9047
-          name: web
+          name: tcp-web
         - containerPort: 31010
-          name: client
+          name: tcp-client
         - containerPort: 45678
-          name: server
+          name: tcp-server
         readinessProbe:
           tcpSocket:
-            port: 9047
+            port: tcp-web
           initialDelaySeconds: 5
           periodSeconds: 5
       initContainers:
