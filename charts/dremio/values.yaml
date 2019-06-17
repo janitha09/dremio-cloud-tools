@@ -25,7 +25,7 @@ executor:
 zookeeper:
   memory: 1024
   cpu: 0.5
-  count: 3
+  count: 1
   volumeSize: 10Gi
 
 # If your Kubernetes cluster does not support LoadBalancer,
